@@ -108,9 +108,6 @@ export default class StubsManager {
 
         if (!_.includes(settings['python.analysis.typeshedPaths'], path.join('.vscode', 'Pico-Stub')))
             settings['python.analysis.typeshedPaths'].push(path.join('.vscode', 'Pico-Stub'));
-        
-        if (!_.includes(settings['python.analysis.typeshedPaths'], path.join('lib')))
-            settings['python.analysis.typeshedPaths'].push(path.join('lib'));
 
         settings['python.languageServer'] = 'Pylance';
         settings['python.analysis.typeCheckingMode'] = 'basic';
@@ -121,6 +118,9 @@ export default class StubsManager {
 
         if (!_.includes(settings['python.analysis.extraPaths'], path.join('.vscode', 'Pico-Stub', 'stubs')))
             settings['python.analysis.extraPaths'].push(path.join('.vscode', 'Pico-Stub', 'stubs'));
+        
+        if (!_.includes(settings['python.analysis.extraPaths'], path.join('lib')))
+            settings['python.analysis.extraPaths'].push(path.join('lib'));
 
         await fsp.writeFile(path.join(vsc, 'settings.json'), JSON.stringify(settings, null, 4));
     }

@@ -108,6 +108,9 @@ export default class StubsManager {
 
         if (!_.includes(settings['python.analysis.typeshedPaths'], path.join('.vscode', 'Pico-Stub')))
             settings['python.analysis.typeshedPaths'].push(path.join('.vscode', 'Pico-Stub'));
+        
+        if (!_.includes(settings['python.analysis.typeshedPaths'], path.join('lib')))
+            settings['python.analysis.typeshedPaths'].push(path.join('lib'));
 
         settings['python.languageServer'] = 'Pylance';
         settings['python.analysis.typeCheckingMode'] = 'basic';

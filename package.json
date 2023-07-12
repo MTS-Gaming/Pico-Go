@@ -279,7 +279,7 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
     "safe-buffer": "^5.2.1",
-    "semver": "^7.3.4",
+    "semver": "^7.5.2",
     "serialport": "^9.0.6",
     "spdx-correct": "^3.1.1",
     "spdx-exceptions": "^2.3.0",
